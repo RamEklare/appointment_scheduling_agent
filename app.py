@@ -6,15 +6,15 @@ st.set_page_config(page_title="Medical Appointment AI Agent", layout="wide")
 st.title("🏥 Medical Appointment Scheduling AI Agent")
 
 # --- Load your own data ---
-patients_df = db.load_patients("data/patients.csv")
-doctor_schedules = scheduler.load_doctor_schedules("data/doctor_schedules.xlsx")
+patients_df = db.load_patients("C:/Users/HP/medical_scheduling_agent/patients_sample_50.csv")
+doctor_schedules = scheduler.load_doctor_schedules("data/doctor_schedules_sample.xlsx")
 
 # --- Booking form ---
 st.subheader("Book Appointment")
 
 name = st.text_input("Patient Name")
 dob = st.date_input("Date of Birth")
-doctor = st.selectbox("Doctor", doctor_schedules['Doctor'].unique())
+doctor = st.selectbox("Doctor", doctor_schedules['doctor_name'].unique())
 location = st.text_input("Location")
 insurance_carrier = st.text_input("Insurance Carrier")
 member_id = st.text_input("Member ID")
@@ -38,4 +38,4 @@ if st.button("Book Appointment"):
     st.info("Exported appointment to Excel.")
 
     # Email intake form (stub)
-    comm.email_form(name, "forms/patient_intake_form.pdf")
+    comm.email_form(name, "forms/Patient Intake Form.pdf")
