@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+openpyxl
+sqlalchemy
+langchain
+python-dateutil
+pydantic
+requests
+schedule
+python-dotenv
+xlrd
+xlsxwriter
+twilio
